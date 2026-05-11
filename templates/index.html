@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hamza ❤️ Iram</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
+
+    <!-- GOOGLE FONTS -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- MULTIPLE BACKGROUND VIDEOS -->
+
+    <div class="background-slider">
+
+        {% for video in videos %}
+
+        <video class="bg-video {% if loop.index == 1 %}active{% endif %}"
+               autoplay
+               muted
+               loop
+               playsinline>
+
+            <source src="/media/{{ video }}">
+
+        </video>
+
+        {% endfor %}
+
+        <div class="overlay"></div>
+
+    </div>
+
+    <!-- GLOW LIGHTS -->
+
+    <div class="light light1"></div>
+    <div class="light light2"></div>
+    <div class="light light3"></div>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h3 class="family-text">
+                Together With Their Families
+            </h3>
+
+            <h1 class="main-title">
+                Hamza
+                <span>❤</span>
+                Iram
+            </h1>
+
+            <p class="hero-description">
+                Joyfully invite you to celebrate
+                our beautiful Nikkah Ceremony
+            </p>
+
+            <div class="glass-card">
+
+                <h2>20 December 2026</h2>
+
+                <p>Rawalpindi, Pakistan</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+
+    <section class="gallery-section">
+
+        <div class="section-title">
+            Our Beautiful Journey
+        </div>
+
+        <div class="slider">
+
+            <div class="slide-track">
+
+                {% for image in images %}
+
+                <div class="slide">
+
+                    <img src="/media/{{ image }}">
+
+                </div>
+
+                {% endfor %}
+
+                {% for image in images %}
+
+                <div class="slide">
+
+                    <img src="/media/{{ image }}">
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUOTE -->
+
+    <section class="quote-section">
+
+        <div class="quote">
+            “And We Created You In Pairs”
+        </div>
+
+        <div class="quote-ref">
+            — Quran 78:8
+        </div>
+
+    </section>
+
+    <!-- VIDEO SHOWCASE -->
+
+    <section class="videos-section">
+
+        <div class="section-title">
+            Beautiful Moments
+        </div>
+
+        <div class="video-grid">
+
+            {% for video in videos %}
+
+            <div class="video-card">
+
+                <video autoplay muted loop playsinline>
+
+                    <source src="/media/{{ video }}">
+
+                </video>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-text">
+            Waiting To Celebrate This Beautiful Day With You
+        </div>
+
+    </footer>
+
+    <!-- PREMIUM MUSIC -->
+
+    <audio id="bg-music" loop>
+
+        <source src="{{ url_for('static',
+        filename='music/romantic.mp3') }}">
+
+    </audio>
+
+    <!-- MUSIC BUTTON -->
+
+    <div class="music-btn"
+         id="music-btn">
+
+         ♫
+
+    </div>
+
+    <script src="{{ url_for('static',
+    filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
